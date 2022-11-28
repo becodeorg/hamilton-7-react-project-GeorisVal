@@ -4,10 +4,20 @@ import "./App.css";
 // import { motion } from "framer-motion"
 // import { createBrowserRouter, RouterProvider, Route } from "react-router-dom"; https://reactrouter.com/en/main/start/tutorial
 // import { uuid as randomId } from 'uuidv4';
+// API Key: 8f0f7afd66254afbbd55e97e8ba32642
+// API Docs: https://rawg.io/apidocs
+import axios from 'axios';
+
+async function getGames() {
+  const query = await axios.get('https://api.rawg.io/api/platforms?key=8f0f7afd66254afbbd55e97e8ba32642');
+  const data = await query.data.results;
+  const games = data.games;
+  console.log(data.slug)
+}
 
 function App() {
   const [count, setCount] = useState(0);
-
+  getGames()
   return (
     <div className="App">
       <div>
