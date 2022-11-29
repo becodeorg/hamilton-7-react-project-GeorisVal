@@ -20,8 +20,8 @@ function App() {
         <Nav />
         {/* <Header /> */}
         <Routes>
-          <Route path="./components/TopGames" element={<TopGames />}/>
-          <Route path="./components/Search" element={<Search />}/>
+          <Route path="/TopGames" element={<TopGames />}/>
+          <Route path="/Search" element={<Search />}/>
           <Route path ="/Game/:name" element={<GameDetail />} />
         </Routes>
       </div>
