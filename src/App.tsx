@@ -14,15 +14,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // ht
 import axios from 'axios';
 
 function App() {
-  return (
+  return (   
     <Router>
-      <div className="App">
+      <div className="App m-auto mt-10">
         <Nav />
-        {/* <Header /> */}
         <Routes>
+          <Route path="/" element={<Header />} />
           <Route path="/TopGames" element={<TopGames />}/>
-          <Route path="/Search" element={<Search />}/>
+          <Route path="/Search" element={<Search />} />
           <Route path ="/Game/:name" element={<GameDetail />} />
+          <Route path="/List" element={<Header />} />
         </Routes>
       </div>
     </Router>

@@ -6,11 +6,25 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const [gameResults, setGameResults] = useState([])
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setSearchTerm(e.target.value)
   }
 
-  const onSubmit = (e) => {
+  const enterHandler = (e:any) => {
+    if (e.key === "Enter") {
+      e.preventDefault()
+      let slug = searchTerm.split(' ').join('-').toLowerCase()
+      setGameResults([])
+      fetch(`https://rawg.io/api/games?search=${slug}&key=8f0f7afd66254afbbd55e97e8ba32642`)
+        .then(resp => resp.json())
+        .then(({results}) => {
+          results === undefined ? alert('no games found') : setGameResults(results)
+        })
+      setSearchTerm("")
+  }
+  }
+
+  const onSubmit = (e:any) => {
     e.preventDefault()
     let slug = searchTerm.split(' ').join('-').toLowerCase()
 
@@ -27,7 +41,7 @@ const Search = () => {
     <div className="game-search">
       <h1>Game Search</h1>
         <form onSubmit={onSubmit}>
-          <input type="text" value={searchTerm} onChange={handleChange}/>
+          <input type="text" value={searchTerm} onChange={handleChange} onKeyUp={enterHandler}/>
           <br></br>
           <input type="submit"/>
         </form>
