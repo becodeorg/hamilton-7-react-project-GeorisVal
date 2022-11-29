@@ -1,6 +1,6 @@
 import axios from 'axios';
 async function getCat() {
-    const query = await axios.get(`https://api.rawg.io/api/games?platforms=${id}&key=952d287c927344c9bf73dc7afd0ab555`);
+    const query = await axios.get(`https://api.rawg.io/api/games?platforms=${id}&key=952d287c927344c9bf73dc7afd0ab555&page_size=21`);
     const data = await query.data.results;
     return data;
 }
