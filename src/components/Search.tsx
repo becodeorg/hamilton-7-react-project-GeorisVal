@@ -15,7 +15,7 @@ const Search = () => {
       e.preventDefault()
       let slug = searchTerm.split(' ').join('-').toLowerCase()
       setGameResults([])
-      fetch(`https://rawg.io/api/games?search=${slug}&key=8f0f7afd66254afbbd55e97e8ba32642`)
+      fetch(`https://rawg.io/api/games?search=${slug}&key=952d287c927344c9bf73dc7afd0ab555`)
         .then(resp => resp.json())
         .then(({results}) => {
           results === undefined ? alert('no games found') : setGameResults(results)
@@ -29,7 +29,7 @@ const Search = () => {
     let slug = searchTerm.split(' ').join('-').toLowerCase()
 
     setGameResults([])
-    fetch(`https://rawg.io/api/games?search=${slug}&key=8f0f7afd66254afbbd55e97e8ba32642`)
+    fetch(`https://rawg.io/api/games?search=${slug}&key=952d287c927344c9bf73dc7afd0ab555`)
     .then(resp => resp.json())
     .then(({results}) => {
         results === undefined ? alert('no games found') : setGameResults(results)

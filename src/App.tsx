@@ -7,10 +7,11 @@ import Search from "./components/Search";
 import TopGames from "./components/TopGames";
 import Nav from "./components/Nav"
 import Platform from "./components/Platform"
+import Tags from "./components/Tags"
 // import { motion } from "framer-motion"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // https://reactrouter.com/en/main/start/tutorial
 // import { uuid as randomId } from 'uuidv4';
-// API Key: 8f0f7afd66254afbbd55e97e8ba32642
+// API Key: 952d287c927344c9bf73dc7afd0ab555
 // API Docs: https://rawg.io/apidocs
 import axios from 'axios';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path ="/game/:name" element={<GameDetail />} />
           <Route path="/platform/:name" element={<Platform />} />
+          <Route path="/tag/:name" element={<Tags />} />
         </Routes>
       </div>
     </Router>

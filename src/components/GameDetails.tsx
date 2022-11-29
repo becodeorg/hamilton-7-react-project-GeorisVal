@@ -1,15 +1,17 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function GameDetails():any {
+    useEffect(() => {
+        getGames()
+    }, [])
     const [game, setGame]:any = useState("");
     const id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1)
     function getGames() {
         axios
-            .get(`https://api.rawg.io/api/games/${id}?key=8f0f7afd66254afbbd55e97e8ba32642`)
+            .get(`https://api.rawg.io/api/games/${id}?key=952d287c927344c9bf73dc7afd0ab555`)
             .then(res => setGame(res.data));
     }
-    getGames()
 
     if(game !== undefined && game !== "") {
         console.log(game)
