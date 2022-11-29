@@ -7,15 +7,15 @@ export default function Nav() {
     }
 
     return (
-        <nav className="absolute flex top-0 text-center justify-center items-center left-[50%] right-[50%]">
-            <ul className="nav-links flex gap-52 flex-row">
-                <Link style={navStyle} to={'/'}>
-                    <li>Home</li>
+        <nav className="sticky flex top-0 text-center justify-center items-center w-[150%] bg-emerald-500 opacity-50 hover:opacity-100">
+            <ul className="nav-links flex gap-5 flex-row">
+                <Link className="text-white" to={'/categories'}>
+                    <li>Categories</li>
                 </Link>
-                <Link style={navStyle} to={'/topgames'}>
+                <Link className="text-white" to={'/topgames'}>
                     <li>Top Games</li>
                 </Link>
-                <Link style={navStyle} to={'/search'}>
+                <Link className="text-white" to={'/search'}>
                     <li>Search</li>
                 </Link>
             </ul>

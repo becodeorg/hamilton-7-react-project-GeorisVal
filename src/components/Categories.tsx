@@ -29,12 +29,15 @@ const tags = await getTags();
 
 export default function Header() {
     return (
-        <div className="flex gap-10">
+        <div className="flex gap-28 m-auto">
             <ul id='platforms'>
-                {platforms.map((platform:any) => 
-                <div key={platform.id} className={`w-64 h-20 bg-cover flex items-center justify-center mb-5 rounded-md hover:text-red-800 cursor-pointer`} style={{backgroundImage: `url(${platform.image_background})`}}>
-                    <li style={{WebkitTextStroke: "1px black", fontWeight: "700"}}>{platform.name} <span>({platform.games_count} games)</span></li>
-                </div>)}
+                {platforms.map((platform:any) =>
+                <a href={`platform/${platform.id}`} className="text-white">
+                    <div key={platform.id} className={`w-64 h-20 bg-cover flex items-center justify-center mb-5 rounded-md hover:text-red-800 cursor-pointer`} style={{backgroundImage: `url(${platform.image_background})`}}>
+                        <li style={{WebkitTextStroke: "1px black", fontWeight: "700"}}>{platform.name} <span>({platform.games_count} games)</span></li>
+                    </div>
+                    </a>
+                )}
             </ul>
             <ul id='genres'>
                 {genres.map((genre:any) => 

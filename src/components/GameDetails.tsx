@@ -1,16 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-export default function GameDetails() {
+export default function GameDetails():any {
     const [game, setGame]:any = useState("");
-    const getLastItem = window.location.href.substring(window.location.href.lastIndexOf('/') + 1)
+    const id = window.location.href.substring(window.location.href.lastIndexOf('/') + 1)
     function getGames() {
         axios
-            .get(`https://api.rawg.io/api/games/${getLastItem}?key=8f0f7afd66254afbbd55e97e8ba32642`)
+            .get(`https://api.rawg.io/api/games/${id}?key=8f0f7afd66254afbbd55e97e8ba32642`)
             .then(res => setGame(res.data));
     }
     getGames()
-    console.log(getLastItem)
 
     if(game !== undefined && game !== "") {
         console.log(game)
@@ -29,6 +28,9 @@ export default function GameDetails() {
             { 
                 game.platforms.map((p:any) => `${p.platform.name} | `)
                 }
+            
+            <h3>Description</h3>
+            {game.description}
     </div>
     );
     }
