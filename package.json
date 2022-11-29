@@ -21,7 +21,8 @@
     "redux": "^4.2.0",
     "sort-by": "^0.0.2",
     "styled-components": "^5.3.6",
-    "uuidv4": "^6.2.13"
+    "uuidv4": "^6.2.13",
+    "vite-plugin-top-level-await": "^1.2.2"
   },
   "devDependencies": {
     "@becode/eslint-config": "^0.13.0",
