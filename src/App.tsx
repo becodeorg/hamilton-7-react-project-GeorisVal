@@ -19,7 +19,7 @@ import axios from 'axios';
 function App() {
   return (   
     <Router>
-      <div className="App m-auto mt-10">
+      <div className="App m-auto">
         <Nav />
         <Routes>
           <Route path="/categories" element={<Categories />} />

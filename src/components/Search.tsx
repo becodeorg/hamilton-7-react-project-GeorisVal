@@ -38,7 +38,7 @@ const Search = () => {
   }
 
   return (
-    <div className="game-search">
+    <div className="game-search rounded-lg shadow-md w-11/12 m-auto">
       <h1>Game Search</h1>
         <form onSubmit={onSubmit}>
           <input type="text" value={searchTerm} onChange={handleChange} onKeyUp={enterHandler}/>

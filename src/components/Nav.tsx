@@ -7,7 +7,7 @@ export default function Nav() {
     }
 
     return (
-        <nav className="absolute flex top-0 text-center justify-center items-center right-[50%] left-[50%] bg-emerald-500 opacity-50 hover:opacity-100">
+        <nav className="sticky flex top-0 text-center justify-center items-center opacity-50 hover:opacity-100 w-screen bg-[#242424]">
             <ul className="nav-links flex gap-5 flex-row">
                 <Link className="text-white" to={'/categories'}>
                     <li>Categories</li>

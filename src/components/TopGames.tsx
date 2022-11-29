@@ -15,18 +15,18 @@ export default function TopGames() {
     }
 
     return (
-        <div className="rounded-lg shadow-md w-6/12 m-auto">
+        <div className="rounded-lg shadow-md w-11/12 m-auto">
             <ul className="grid grid-cols-3 gap-5">
                 {
                     games.map((game:any) => (
-                        <li key={game.id}>
                             <Link to={{
                                 pathname: `/game/${game.id}`,
-                                }} >
-                                <h3>{game.name}</h3>
-                                <img src={game.background_image} alt="game" />
+                                }} className="text-white">
+                                <div className={`w-64 h-20 bg-cover flex items-center justify-center mb-5 rounded-md hover:text-red-800 cursor-pointer`} style={{backgroundImage: `url(${game.short_screenshots[0].image})`}}>
+                                    <li style={{WebkitTextStroke: "1px black", fontWeight: "700"}}>{game.name}</li>
+                                </div>
                             </Link>
-                        </li>
+                        
                     ))
                 }
             </ul>
