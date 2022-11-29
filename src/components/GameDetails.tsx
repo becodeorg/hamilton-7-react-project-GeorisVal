@@ -23,16 +23,16 @@ export default function GameDetails():any {
             <p>Rating: {game.rating}</p>
             <h3>Genre(s):</h3>
             { 
-                game.genres.map((g:any) => `${g.name} | `)
+                game.genres.map((g:any) => `${g.name}`)
             }
 
             <h3>Platform(s):</h3>
             { 
-                game.platforms.map((p:any) => `${p.platform.name} | `)
+                game.platforms.map((p:any) => `${p.platform.name} `)
                 }
             
             <h3>Description</h3>
-            {game.description}
+            <div dangerouslySetInnerHTML={{__html: game.description}}></div>
     </div>
     );
     }
