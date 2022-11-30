@@ -9,11 +9,6 @@ async function getGenres() {
     const data = await query.data.results;
     return data;
 }
-async function getGames() {
-    const query = await axios.get('https://api.rawg.io/api/games?key=952d287c927344c9bf73dc7afd0ab555');
-    const data = await query.data.results;
-    return data;
-}
 async function getTags() {
     const query = await axios.get('https://api.rawg.io/api/tags?key=952d287c927344c9bf73dc7afd0ab555');
     const data = await query.data.results;
@@ -21,8 +16,8 @@ async function getTags() {
 }
 
 const platforms = await getPlat();
+console.log(platforms)
 const genres = await getGenres();
-const games = await getGames();
 const tags = await getTags();
 
 

@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+.gameCard:hover {
+  --webkit-text-stroke: "1px white"
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
