@@ -10,7 +10,7 @@ const Search = () => {
     setSearchTerm(e.target.value)
   }
 
-  const enterHandler = (e:any) => {
+  /* const enterHandler = (e:any) => {
     if (e.key === "Enter") {
       e.preventDefault()
       let slug = searchTerm.split(' ').join('-').toLowerCase()
@@ -22,7 +22,7 @@ const Search = () => {
         })
       setSearchTerm("")
   }
-  }
+  } */
 
   const onSubmit = (e:any) => {
     e.preventDefault()
@@ -41,7 +41,7 @@ const Search = () => {
     <div className="game-search rounded-lg shadow-md w-11/12 m-auto">
       <h1>Game Search</h1>
         <form onSubmit={onSubmit}>
-          <input type="text" value={searchTerm} onChange={handleChange} onKeyUp={enterHandler}/>
+          <input type="text" value={searchTerm} onChange={handleChange}/>
           <br></br>
           <input type="submit"/>
         </form>

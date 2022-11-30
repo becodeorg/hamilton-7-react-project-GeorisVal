@@ -9,6 +9,10 @@
   --webkit-text-stroke: "1px white"
 }
 
+h3 {
+  font-size: 24rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
