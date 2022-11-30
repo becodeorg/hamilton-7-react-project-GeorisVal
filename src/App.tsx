@@ -1,6 +1,7 @@
 import { Key, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import Home from "./components/Home"
 import Categories from "./components/Categories";
 import GameDetail from "./components/GameDetails";
 import Search from "./components/Search";
@@ -14,6 +15,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // ht
 // import { uuid as randomId } from 'uuidv4';
 // API Key: 952d287c927344c9bf73dc7afd0ab555
 // API Docs: https://rawg.io/apidocs
+// useGlobalContext ==> requêtes API & fonctionnalités
 import axios from 'axios';
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
       <div className="App m-auto">
         <Nav />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/topgames" element={<TopGames />}/>
           <Route path="/search" element={<Search />} />
